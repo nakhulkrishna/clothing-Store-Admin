@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "693278665108",
+    "project_id": "theoneclothing-68108",
+    "storage_bucket": "theoneclothing-68108.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693278665108:android:de67fe6c4ed11e96ab8781",
+        "android_client_info": {
+          "package_name": "com.example.clothingstore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW_ayhY7ikvHVG9R3Gmbh9JLKe5c9iNBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
