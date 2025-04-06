@@ -1,4 +1,3 @@
-// user_model.dart
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Addressmodel {
@@ -12,7 +11,8 @@ class Addressmodel {
   final String landmark;
   final String city;
   final String state;
-  final String addressType;
+  final String addressType; // Use String for clarity: 'Home', 'Work', etc.
+  final DateTime? time;
 
   Addressmodel({
     required this.uid,
@@ -26,9 +26,25 @@ class Addressmodel {
     required this.city,
     required this.state,
     required this.addressType,
+    this.time,
   });
 
-  // Convert a Addressmodel object to a Map to store in Firestore
+  /// Empty instance for defaults
+  static Addressmodel empty() => Addressmodel(
+    uid: "",
+    firstName: "",
+    lastName: "",
+    phone: "",
+    pincode: "",
+    flat: "",
+    street: "",
+    landmark: "",
+    city: "",
+    state: "",
+    addressType: "Home", // or "Work" as default
+  );
+
+  /// Convert Addressmodel to Firestore Map
   Map<String, dynamic> toMap() {
     return {
       'uid': uid,
@@ -42,11 +58,14 @@ class Addressmodel {
       'city': city,
       'state': state,
       'addressType': addressType,
-      'createdAt': FieldValue.serverTimestamp(),
+      'createdAt':
+          time != null
+              ? Timestamp.fromDate(time!)
+              : FieldValue.serverTimestamp(),
     };
   }
 
-  // Create a Addressmodel object from a Firestore document snapshot
+  /// Create Addressmodel from Firestore Map
   factory Addressmodel.fromMap(Map<String, dynamic> map) {
     return Addressmodel(
       uid: map['uid'] ?? '',
@@ -59,7 +78,11 @@ class Addressmodel {
       landmark: map['landmark'] ?? '',
       city: map['city'] ?? '',
       state: map['state'] ?? '',
-      addressType: map['addressType'] ?? '',
+      addressType: map['addressType'] ?? 'Home',
+      time:
+          map['createdAt'] != null
+              ? (map['createdAt'] as Timestamp).toDate()
+              : null,
     );
   }
 }

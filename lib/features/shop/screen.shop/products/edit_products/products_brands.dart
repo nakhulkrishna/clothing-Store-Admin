@@ -7,7 +7,7 @@ import 'package:thestyldclubadmin/common/utils/constants/sizes.dart';
 import 'package:thestyldclubadmin/common/widgets/containers/rounded_container.dart';
 import 'package:thestyldclubadmin/common/widgets/shimmers/shimmer.dart';
 import 'package:thestyldclubadmin/features/shop/controller/brand/brand_controller.dart';
-import 'package:thestyldclubadmin/features/shop/controller/products/create_product_controller.dart';
+import 'package:thestyldclubadmin/features/shop/controller/products/edit_products_controller.dart';
 import 'package:thestyldclubadmin/features/shop/models/brandmodel.dart';
 
 class ProductsBrands extends StatelessWidget {
@@ -15,7 +15,7 @@ class ProductsBrands extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controllers = Get.put(CreateProductController());
+    final controllers = Get.put(EditProductController());
     final brandController = Get.put(BrandController());
 
     if (brandController.allItems.isEmpty) {

@@ -90,7 +90,7 @@ class TableResoures extends DataTableSource {
           TTableActionButtons(
             onDeletePressed: () => controller.confrimAndDeleteItem(product),
             onEditPressed:
-                () => Get.toNamed(Routes.editProducts, arguments: 'Categorys'),
+                () => Get.toNamed(Routes.editProducts, arguments: product),
           ),
         ),
       ],

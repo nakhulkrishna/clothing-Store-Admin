@@ -22,65 +22,69 @@ class ProductsAdditinalimages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => SizedBox(
-        height: 300,
-        child: Column(
-          children: [
-            Expanded(
-              flex: 2,
-              child: GestureDetector(
-                onTap: ontapAddImages,
-                child: TRoundedContainer(
-                  child: Center(
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          TImages.defaultMultiImageIcon,
-                          width: 50,
-                          height: 50,
-                        ),
-                        Text("Add Additinal Products Images"),
-                      ],
-                    ),
+      
+    return SizedBox(
+      height: 300,
+      child: Column(
+        children: [
+          Expanded(
+            flex: 2,
+            child: GestureDetector(
+              onTap: ontapAddImages,
+              child: TRoundedContainer(
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        TImages.defaultMultiImageIcon,
+                        width: 50,
+                        height: 50,
+                      ),
+                      Text("Add Additinal Products Images"),
+                    ],
                   ),
                 ),
               ),
             ),
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: SizedBox(height: 80, child: _uploadImagesOrEmpty()),
-                  ),
-
-                  TRoundedContainer(
-                    width: 80,
-                    height: 80,
-                    showBorder: true,
-                    borderColor: TColors.grey,
-                    onTap: ontapAddImages,
-                    child: Center(child: Icon(Iconsax.add)),
-                  ),
-                ],
-              ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: SizedBox(height: 80, child: _uploadImagesOrEmpty()),
+                ),
+                SizedBox(width: TSizes.spaceBtwItems / 2),
+                TRoundedContainer(
+                  width: 80,
+                  height: 80,
+                  showBorder: true,
+                  borderColor: TColors.grey,
+                  onTap: ontapAddImages,
+                  child: Center(child: Icon(Iconsax.add)),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
   _uploadImagesOrEmpty() {
-    return emptyList();
+    return _uploadedImages();
   }
 
   Widget emptyList() {
     return ListView.separated(
+      scrollDirection: Axis.horizontal,
       itemBuilder:
-          (context, index) =>
-              TRoundedContainer(backgroundColor: TColors.primaryBackground),
+          (context, index) => TRoundedContainer(
+            backgroundColor: TColors.primaryBackground,
+            width: 80,
+            height: 80,
+          ),
       separatorBuilder:
           (context, index) => SizedBox(width: TSizes.spaceBtwItems / 2),
       itemCount: 6,

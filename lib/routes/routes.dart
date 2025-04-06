@@ -21,7 +21,12 @@ class Routes {
   static const customers = '/customers';
 
   static const detailsCustomers = '/detailsCustomers';
+  static const allOrder = "/allOrders";
 
+  static const orderDetails = "/orderDetails";
+
+  static const profile = '/profile';
+  static const settings = '/settings';
   static List sidebarMenuItem = [
     dashboard,
     media,
@@ -30,7 +35,10 @@ class Routes {
     banners,
     products,
     customers,
-    detailsCustomers
+    detailsCustomers,
+    allOrder,
+    profile,
+    settings,
   ];
   // static const dashboard = '/dashboard';
   // static const responsiveDesignScreen = '/responsiveDesignScreen';

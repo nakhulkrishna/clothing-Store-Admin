@@ -15,9 +15,13 @@ import 'package:thestyldclubadmin/features/shop/screen.shop/categorys/screens/ed
 import 'package:thestyldclubadmin/features/shop/screen.shop/customers/all_constomers/costomer.dart';
 import 'package:thestyldclubadmin/features/shop/screen.shop/customers/customer_details/customer_details.dart';
 import 'package:thestyldclubadmin/features/shop/screen.shop/dashbord/dashboard_screen.dart';
+import 'package:thestyldclubadmin/features/shop/screen.shop/orders/all_orders/all_orders.dart';
+import 'package:thestyldclubadmin/features/shop/screen.shop/orders/order_details/order_details.dart';
 import 'package:thestyldclubadmin/features/shop/screen.shop/products/all_products/products.dart';
 import 'package:thestyldclubadmin/features/shop/screen.shop/products/create_products/create_products.dart';
 import 'package:thestyldclubadmin/features/shop/screen.shop/products/edit_products/edit_products.dart';
+import 'package:thestyldclubadmin/features/persnalizations/screens/profile/profile.dart';
+import 'package:thestyldclubadmin/features/persnalizations/screens/settings/settings.dart';
 import 'package:thestyldclubadmin/routes/route_middleware.dart';
 import 'package:thestyldclubadmin/routes/routes.dart';
 
@@ -56,7 +60,7 @@ class AppRoutes {
 
     GetPage(
       name: Routes.brands,
-      page: () =>  BrandsScreen(),
+      page: () => BrandsScreen(),
       middlewares: [RouteMiddleware()],
     ),
     GetPage(
@@ -81,7 +85,7 @@ class AppRoutes {
     ),
     GetPage(
       name: Routes.editBanner,
-      page: () =>  EditBanner(),
+      page: () => EditBanner(),
 
       middlewares: [RouteMiddleware()],
     ),
@@ -108,6 +112,26 @@ class AppRoutes {
     GetPage(
       name: Routes.detailsCustomers,
       page: () => const CustomerDetails(),
+      middlewares: [RouteMiddleware()],
+    ),
+    GetPage(
+      name: Routes.allOrder,
+      page: () => const AllOrders(),
+      middlewares: [RouteMiddleware()],
+    ),
+    GetPage(
+      name: Routes.orderDetails,
+      page: () => const OrderDetails(),
+      middlewares: [RouteMiddleware()],
+    ),
+    GetPage(
+      name: Routes.profile,
+      page: () => const Profile(),
+      middlewares: [RouteMiddleware()],
+    ),
+    GetPage(
+      name: Routes.settings,
+      page: () => const Settings(),
       middlewares: [RouteMiddleware()],
     ),
     // GetPage(name: Routes.login ,page: ()=> const LoginScreen()),

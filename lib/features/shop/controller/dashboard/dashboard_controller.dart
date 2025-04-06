@@ -3,8 +3,9 @@ import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:thestyldclubadmin/common/utils/constants/enums.dart';
 import 'package:thestyldclubadmin/common/utils/helpers/helper_functions.dart';
-
 import 'package:thestyldclubadmin/features/shop/models/orderModel.dart';
+
+
 
 class DashboardController extends GetxController {
   static DashboardController get instance => Get.find();
@@ -15,6 +16,11 @@ class DashboardController extends GetxController {
 
   static final List<Ordermodel> orders = [
     Ordermodel(
+      billingAddressSameAsShipping:  true,
+      shippingCost: "",
+      docId: "",
+      taxCost: 1.0,
+      item: [],
       deliveyDate: DateTime(2025, 3, 23),
       status: OrderStatus.delivered,
       id: 'CWT0013', // Unique ID
@@ -23,6 +29,11 @@ class DashboardController extends GetxController {
       orderDate: DateTime(2025, 3, 23),
     ),
     Ordermodel(
+      billingAddressSameAsShipping: true,
+      shippingCost: "",
+      docId: "",
+      taxCost: 1.0,
+      item: [],
       deliveyDate: DateTime(2025, 3, 24),
       status: OrderStatus.delivered,
       id: 'CWT0025', // Unique ID
@@ -31,6 +42,11 @@ class DashboardController extends GetxController {
       orderDate: DateTime(2025, 3, 24),
     ),
     Ordermodel(
+     billingAddressSameAsShipping: true,
+      shippingCost: "",
+      docId: "",
+      taxCost: 1.0,
+      item: [],
       deliveyDate: DateTime(2025, 3, 25),
       status: OrderStatus.delivered,
       id: 'CWT00256', // Unique ID
@@ -39,6 +55,11 @@ class DashboardController extends GetxController {
       orderDate: DateTime(2025, 3, 25),
     ),
     Ordermodel(
+       billingAddressSameAsShipping: true,
+      shippingCost: "",
+      docId: "",
+      taxCost: 1.0,
+      item: [],
       deliveyDate: DateTime(2025, 3, 28),
       status: OrderStatus.shipped,
       id: 'CWT00152', // Unique ID
@@ -47,6 +68,11 @@ class DashboardController extends GetxController {
       orderDate: DateTime(2025, 3, 28),
     ),
     Ordermodel(
+      billingAddressSameAsShipping: true,
+      shippingCost: "",
+      docId: "",
+      taxCost: 1.0,
+      item: [],
       deliveyDate: DateTime(2025, 3, 27),
       status: OrderStatus.delivered,
       id: 'CWT1536', // Unique ID
@@ -56,6 +82,11 @@ class DashboardController extends GetxController {
     ),
 
     Ordermodel(
+      billingAddressSameAsShipping: true,
+      shippingCost: "",
+      docId: "",
+      taxCost: 1.0,
+      item: [],
       deliveyDate: DateTime(2025, 3, 23),
       status: OrderStatus.delivered,
       id: 'CWT0013', // Unique ID
@@ -64,6 +95,11 @@ class DashboardController extends GetxController {
       orderDate: DateTime(2025, 3, 23),
     ),
     Ordermodel(
+     billingAddressSameAsShipping: true,
+      shippingCost: "",
+      docId: "",
+      taxCost: 1.0,
+      item: [],
       deliveyDate: DateTime(2025, 3, 24),
       status: OrderStatus.delivered,
       id: 'CWT0025', // Unique ID
@@ -72,6 +108,11 @@ class DashboardController extends GetxController {
       orderDate: DateTime(2025, 3, 24),
     ),
     Ordermodel(
+       billingAddressSameAsShipping:  true,
+      shippingCost: "",
+      docId: "",
+      taxCost: 1.0,
+      item: [],
       deliveyDate: DateTime(2025, 3, 25),
       status: OrderStatus.delivered,
       id: 'CWT00256', // Unique ID
@@ -80,6 +121,11 @@ class DashboardController extends GetxController {
       orderDate: DateTime(2025, 3, 25),
     ),
     Ordermodel(
+       billingAddressSameAsShipping:  true,
+      shippingCost: "",
+      docId: "",
+      taxCost: 1.0,
+      item: [],
       deliveyDate: DateTime(2025, 3, 28),
       status: OrderStatus.shipped,
       id: 'CWT00152', // Unique ID
@@ -88,6 +134,12 @@ class DashboardController extends GetxController {
       orderDate: DateTime(2025, 3, 28),
     ),
     Ordermodel(
+      
+       billingAddressSameAsShipping:  true,
+      shippingCost: "",
+      docId: "",
+      taxCost: 1.0,
+      item: [],
       deliveyDate: DateTime(2025, 3, 27),
       status: OrderStatus.delivered,
       id: 'CWT1536', // Unique ID

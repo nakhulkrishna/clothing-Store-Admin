@@ -15,8 +15,8 @@ import 'package:thestyldclubadmin/features/shop/screen.shop/products/create_prod
 import 'package:thestyldclubadmin/features/shop/screen.shop/products/create_products/widgets/products_visibility.dart'
     show ProductsVisibilityWidget;
 
-import 'package:thestyldclubadmin/features/shop/screen.shop/products/edit_products/widgets/products_brands.dart';
-import 'package:thestyldclubadmin/features/shop/screen.shop/products/edit_products/widgets/products_categorys.dart';
+import 'package:thestyldclubadmin/features/shop/screen.shop/products/create_products/widgets/products_brands.dart';
+import 'package:thestyldclubadmin/features/shop/screen.shop/products/create_products/widgets/products_categorys.dart';
 import 'package:thestyldclubadmin/routes/routes.dart';
 
 class CreateProductsTablet extends StatelessWidget {

@@ -51,4 +51,26 @@ class UserRepository extends GetxController {
       throw 'Something went wrong. Please try again';
     }
   }
+
+  Future<UserModels> fecthUserDetails(String id) async {
+    try {
+      final docSnapshot = await _db.collection('User').doc(id).get();
+
+      if (docSnapshot.exists) {
+        return UserModels.fromSnapshot(docSnapshot);
+      } else {
+        return UserModels.empty();
+      }
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 }

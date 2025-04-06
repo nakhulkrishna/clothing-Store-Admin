@@ -22,7 +22,6 @@ class ProductsAdditinalimages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("images  ${additionalProdutsImagesUrls}");
     return SizedBox(
       height: 300,
       child: Column(
@@ -73,7 +72,7 @@ class ProductsAdditinalimages extends StatelessWidget {
   }
 
   _uploadImagesOrEmpty() {
-    return _uploadedImages();
+    return emptyList();
   }
 
   Widget emptyList() {

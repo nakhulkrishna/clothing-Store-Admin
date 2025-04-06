@@ -148,7 +148,7 @@ class CreateProductController extends GetxController {
       ProductController.instance.addItemsToList(newRecord);
       TFullScreenLoader.stopLoading();
       showCompletingDailog();
-      TFullScreenLoader.stopLoading();
+      resetValues();
     } catch (e) {
       TFullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
@@ -185,5 +185,40 @@ class CreateProductController extends GetxController {
         ),
       ),
     );
+  }
+
+  void resetValues() {
+    isLoading.value = false;
+    productType.value = ProductType.single;
+    productVisibility.value = ProductVisibility.hidden;
+    itemCategory.value = ItemCategory.man;
+
+    title.clear();
+    stock.clear();
+    price.clear();
+    salePrice.clear();
+    description.clear();
+    brandTextField.clear();
+
+    selectedBrand.value = null;
+    selectedCategories.clear();
+
+    thumnailUploader.value = false;
+    additinalImageuploader.value = false;
+    productDataUploader.value = false;
+    categoryRelationshipUploader.value = false;
+
+    // Clear attribute data
+    attributeController.productsAttributes.clear();
+
+    // Reset thumbnail & images
+    final imageController = ProductImagesController.instance;
+    imageController.selectedThumnailImageUrl.value = null;
+    imageController.additinalProductsimagesUrls.clear();
+
+    // Reset variations
+    final variationController = ProductsVariationsController.instance;
+    variationController.resetAllValues();
+    variationController.productVartions.clear();
   }
 }

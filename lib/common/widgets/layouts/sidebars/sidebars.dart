@@ -74,9 +74,30 @@ class Sidebars extends StatelessWidget {
                       route: Routes.products,
                     ),
                     TMenuItem(
-                      icon: Iconsax.user,
+                      icon: Iconsax.profile_2user,
                       itemName: "Customer",
                       route: Routes.customers,
+                    ),
+                    TMenuItem(
+                      icon: Iconsax.box,
+                      itemName: "Orders",
+                      route: Routes.allOrder,
+                    ),
+                    Text(
+                      "OTHERS",
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall!.apply(letterSpacingDelta: 1.2),
+                    ),
+                    TMenuItem(
+                      icon: Iconsax.user,
+                      itemName: "Customer",
+                      route: Routes.profile,
+                    ),
+                    TMenuItem(
+                      icon: Iconsax.setting,
+                      itemName: "Orders",
+                      route: Routes.settings,
                     ),
                   ],
                 ),
